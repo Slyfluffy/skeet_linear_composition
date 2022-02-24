@@ -171,6 +171,7 @@ public:
    Point getPosition()     const { return pt;     }
    Velocity getVelocity()  const { return v;      }
    double getRadius()      const { return radius; }
+   virtual double getAge();
    
    LogicElement * getLogicElement()         { return pLogic;     }
    InterfaceElement * getInterfaceElement() { return pInterface; }
@@ -221,6 +222,13 @@ public:
       return (pt.getX() < -radius || pt.getX() >= dimensions.getX() + radius ||
               pt.getY() < -radius || pt.getY() >= dimensions.getY() + radius);
    }
+   void drawLine(const Point& begin, const Point& end,
+                 double red = 1.0, double green = 1.0, double blue = 1.0) const;
+
+   void drawDot(const Point& point, double radius = 2.0,
+                double red = 1.0, double green = 1.0, double blue = 1.0) const;
+   int    random(int    min, int    max);
+   double random(double min, double max);
 };
 
 class StorageEffects : public StorageElement {
