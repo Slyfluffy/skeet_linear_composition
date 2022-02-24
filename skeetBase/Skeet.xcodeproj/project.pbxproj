@@ -19,6 +19,7 @@
 		C1D4EAED2577F57B002B56E3 /* uiInteract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1D4EAE52577F576002B56E3 /* uiInteract.cpp */; };
 		C1D4EAF22577F58C002B56E3 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D4EAF02577F58C002B56E3 /* GLUT.framework */; };
 		C1D4EAF32577F58C002B56E3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D4EAF12577F58C002B56E3 /* OpenGL.framework */; };
+		CE83611127C80FCF00B77637 /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE83611027C80FCF00B77637 /* storage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,11 @@
 		C1D4EAE62577F578002B56E3 /* uiInteract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uiInteract.h; sourceTree = "<group>"; };
 		C1D4EAF02577F58C002B56E3 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C1D4EAF12577F58C002B56E3 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		CE83610827C7F34B00B77637 /* Interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interface.h; sourceTree = "<group>"; };
+		CE83610A27C7F4DC00B77637 /* logic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = logic.h; sourceTree = "<group>"; };
+		CE83610D27C7F79D00B77637 /* storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = storage.h; sourceTree = "<group>"; };
+		CE83610F27C7FF8900B77637 /* element.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = element.h; sourceTree = "<group>"; };
+		CE83611027C80FCF00B77637 /* storage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = storage.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,19 +80,24 @@
 		C1D4EACA2577F487002B56E3 = {
 			isa = PBXGroup;
 			children = (
-				C159391D271E278800A7F857 /* bullet.h */,
-				C1841325273E9C4400143AB2 /* bullet.cpp */,
 				C1841324273E9C4400143AB2 /* bird.h */,
 				C1841327273E9C4700143AB2 /* bird.cpp */,
-				C16B8F532744AFD8009CC1DC /* score.h */,
-				C16B8F502744ABDE009CC1DC /* score.cpp */,
+				C159391D271E278800A7F857 /* bullet.h */,
+				C1841325273E9C4400143AB2 /* bullet.cpp */,
 				C15451E427403CD70095997B /* effect.h */,
 				C15451E527403ED30095997B /* effect.cpp */,
+				CE83610F27C7FF8900B77637 /* element.h */,
 				C1841323273E9C4400143AB2 /* game.cpp */,
 				C179F5FD2710DE0E00BD3050 /* gun.h */,
 				C1841326273E9C4500143AB2 /* gun.cpp */,
+				CE83610827C7F34B00B77637 /* Interface.h */,
+				CE83610A27C7F4DC00B77637 /* logic.h */,
+				C16B8F532744AFD8009CC1DC /* score.h */,
+				C16B8F502744ABDE009CC1DC /* score.cpp */,
 				C1841328273E9C4900143AB2 /* skeet.h */,
 				C1D4EAE22577F575002B56E3 /* skeet.cpp */,
+				CE83610D27C7F79D00B77637 /* storage.h */,
+				CE83611027C80FCF00B77637 /* storage.cpp */,
 				C179F5FE2712254900BD3050 /* time.h */,
 				C16F25482716733A000FA407 /* time.cpp */,
 				C1D4EAE42577F575002B56E3 /* point.h */,
@@ -179,6 +190,7 @@
 				C1D4EAEA2577F57B002B56E3 /* point.cpp in Sources */,
 				C16F25492716733A000FA407 /* time.cpp in Sources */,
 				C1841329273E9C4900143AB2 /* game.cpp in Sources */,
+				CE83611127C80FCF00B77637 /* storage.cpp in Sources */,
 				C1D4EAEB2577F57B002B56E3 /* skeet.cpp in Sources */,
 				C184132B273E9C4900143AB2 /* gun.cpp in Sources */,
 			);

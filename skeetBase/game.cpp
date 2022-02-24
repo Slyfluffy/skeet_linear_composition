@@ -8,6 +8,7 @@
  ************************************************************************/
 
 #include "uiInteract.h"
+#include "Interface.h"
 #include "skeet.h"
 #include "point.h"
 
