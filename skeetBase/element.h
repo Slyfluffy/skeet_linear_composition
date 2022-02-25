@@ -178,6 +178,9 @@ public:
    virtual Point getEndPoint();
    virtual void  setEndPoint(Point rhs);
    
+   // For bullet and bird
+   virtual bool isOutOfBounds();
+   
    LogicElement * getLogicElement()         { return pLogic;     }
    InterfaceElement * getInterfaceElement() { return pInterface; }
    
@@ -229,7 +232,7 @@ public:
    }
 };
 
-class StorageEffects : public StorageElement {
+class StorageEffect : public StorageElement {
 protected:
    double age;
    Point ptEnd;

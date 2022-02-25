@@ -267,11 +267,36 @@ void InterfaceCrazy::draw(StorageElement * p) {
  */
 
 void LogicPellet::advance(StorageElement * p) {
-   
+   // inertia
+   Point newP = p->getPosition();
+   newP.add(p->getVelocity());
+   p->setPosition(newP);
+
+   // out of bounds checker
+   if (p->isOutOfBounds())
+      p->kill();
 }
 
 void LogicMissile::advance(StorageElement * p) {
+   // kill if it has been around too long
+   StorageEffect s;
+   s.setAge(.5);
+   s.setPosition(p->getPosition());
    
+   Velocity v = p->getVelocity() * -1.0;
+   
+   Point endP = p->getPosition();
+   endP += v;
+   s.setEndPoint(endP);
+
+   // inertia
+   Point newP = p->getPosition();
+   newP.add(p->getVelocity());
+   p->setPosition(newP);
+
+   // out of bounds checker
+   if (p->isOutOfBounds())
+      p->kill();
 }
 
 void LogicMissile::turn(StorageElement * p) {
@@ -291,7 +316,7 @@ void LogicFragment::advance(StorageElement * p) {
 }
 
 void LogicExhaust::advance(StorageElement * p) {
-   
+   p->setAge(p->getAge() - .025);
 }
 
 void LogicStreek::advance(StorageElement * p) {
