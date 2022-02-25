@@ -84,64 +84,64 @@ public:
 
 class LogicElement {
 public:
-   virtual void advance(StorageElement);
-   virtual void turn(StorageElement);
+   virtual void advance(StorageElement *) { }
+   virtual void turn(StorageElement *) { }
 };
 
 class LogicPellet : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicMissile : public LogicElement {
 public:
-   void advance(StorageElement);
-   void turn(StorageElement);
+   void advance(StorageElement *);
+   void turn(StorageElement *);
 };
 
 class LogicBomb : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicShrapnel : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicFragment : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicExhaust : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicStreek : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicStandard : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicSinker : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicFloater : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 class LogicCrazy : public LogicElement {
 public:
-   void advance(StorageElement);
+   void advance(StorageElement *);
 };
 
 /*
@@ -171,7 +171,12 @@ public:
    Point getPosition()     const { return pt;     }
    Velocity getVelocity()  const { return v;      }
    double getRadius()      const { return radius; }
+   
+   // Virtual methods for effects
    virtual double getAge();
+   virtual void setAge(double rhs);
+   virtual Point getEndPoint();
+   virtual void  setEndPoint(Point rhs);
    
    LogicElement * getLogicElement()         { return pLogic;     }
    InterfaceElement * getInterfaceElement() { return pInterface; }
@@ -222,22 +227,19 @@ public:
       return (pt.getX() < -radius || pt.getX() >= dimensions.getX() + radius ||
               pt.getY() < -radius || pt.getY() >= dimensions.getY() + radius);
    }
-   void drawLine(const Point& begin, const Point& end,
-                 double red = 1.0, double green = 1.0, double blue = 1.0) const;
-
-   void drawDot(const Point& point, double radius = 2.0,
-                double red = 1.0, double green = 1.0, double blue = 1.0) const;
-   int    random(int    min, int    max);
-   double random(double min, double max);
 };
 
 class StorageEffects : public StorageElement {
 protected:
    double age;
+   Point ptEnd;
    
 public:
    double getAge() { return age; }
    void setAge(double rhs) { age = rhs; }
+   
+   Point getEndPoint()          { return ptEnd; }
+   void  setEndPoint(Point rhs) { ptEnd = rhs;  }
 };
 
 

@@ -22,8 +22,8 @@ public:
    void input();
    
    class iterator;
-   iterator begin();
-   iterator end();
+   std::vector<StorageElement*> :: iterator begin() { return storage.begin(); }
+   std::vector<StorageElement*> :: iterator end()   { return storage.end();   }
    
    int getFramesLeft();
    int getLevelNumber();

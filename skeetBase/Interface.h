@@ -9,6 +9,7 @@
 #define Interface_h
 
 #include "logic.h"
+#include "uiInteract.h"
 
 class Interface {
 private:
